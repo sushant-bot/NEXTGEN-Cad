@@ -1,0 +1,60 @@
+import React, { useState } from 'react';
+
+interface TrimToolProps {
+    canvasRef: React.RefObject<HTMLCanvasElement>;
+}
+
+const TrimTool: React.FC<TrimToolProps> = ({ canvasRef }) => {
+    const [isTrimming, setIsTrimming] = useState(false);
+    const [startPoint, setStartPoint] = useState<{ x: number; y: number } | null>(null);
+
+    const handleMouseDown = (event: React.MouseEvent) => {
+        if (!canvasRef.current) return;
+
+        const rect = canvasRef.current.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        setStartPoint({ x, y });
+        setIsTrimming(true);
+    };
+
+    const handleMouseMove = (event: React.MouseEvent) => {
+        if (!isTrimming || !canvasRef.current || !startPoint) return;
+
+        const rect = canvasRef.current.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const context = canvasRef.current.getContext('2d');
+        if (context) {
+            // Clear the canvas and redraw the trimmed line
+            context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+            context.beginPath();
+            context.moveTo(startPoint.x, startPoint.y);
+            context.lineTo(x, y);
+            context.strokeStyle = '#000000';
+            context.lineWidth = 2;
+            context.stroke();
+        }
+    };
+
+    const handleMouseUp = () => {
+        setIsTrimming(false);
+        setStartPoint(null);
+
+        // Logic to finalize the trim can be added here
+    };
+
+    return (
+        <div
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            style={{ width: '100%', height: '100%' }}
+        />
+    );
+};
+
+export default TrimTool;
