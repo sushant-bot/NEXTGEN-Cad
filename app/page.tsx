@@ -1,5 +1,5 @@
-import Header from "@/components/Header"
-import Hero from "@/components/Hero"
+import { CADHeader } from "@/components/ui/cad-header"
+import HeroWithBackgroundPaths from "@/components/HeroWithBackgroundPaths"
 import About from "@/components/About"
 import Features from "@/components/Features"
 import ProductShowcase from "@/components/ProductShowcase"
@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-hidden">
       <FloatingShapes />
-      <Header />
-      <Hero />
+      <CADHeader />
+      <HeroWithBackgroundPaths />
       <About />
       <Features />
       <ProductShowcase />
