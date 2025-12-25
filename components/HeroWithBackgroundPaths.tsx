@@ -61,7 +61,7 @@ export default function HeroWithBackgroundPaths() {
     scale: 1.05,
     transition: {
       duration: 0.2,
-      ease: "easeInOut"
+      ease: "easeInOut" as const
     }
   };
 
