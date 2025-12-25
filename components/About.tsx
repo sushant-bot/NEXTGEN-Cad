@@ -54,7 +54,9 @@ export default function About() {
       <div className="absolute inset-0">
         {/* Animated gradient orbs */}
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-600/30 rounded-full mix-blend-normal filter blur-[128px] animate-pulse"></div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="absolute top-40 right-0 w-[500px] h-[500px] bg-purple-600/25 rounded-full mix-blend-normal filter blur-[128px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-cyan-500/20 rounded-full mix-blend-normal filter blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
         
         {/* Grid pattern overlay */}

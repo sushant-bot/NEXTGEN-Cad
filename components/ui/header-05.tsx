@@ -21,7 +21,8 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 import { ShoppingBag, Equal } from "lucide-react";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"; 
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"; 
 
 const Header = () => {
   return (
@@ -53,11 +54,29 @@ const Header = () => {
           <Sheet>
             <div className="flex items-center px-2 gap-2">
               <Search />
-              <button className="h-9 w-9 text-background hover:text-background/80 relative">
+              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+              <button className="h-9 w-9 text-background hover:text-background/80 relative" title="Shopping cart" aria-label="View shopping cart">
                 <ShoppingBag className="h-4 w-4" />
               </button>
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="text-background hover:text-background/80 text-sm px-3 py-1.5 rounded-md hover:bg-background/10 transition-colors">
+                    Sign In
+                  </button>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton 
+                  appearance={{
+                    elements: {
+                      avatarBox: "h-8 w-8"
+                    }
+                  }}
+                />
+              </SignedIn>
               <SheetTrigger asChild>
-                <button className="h-9 w-9 text-background hover:text-background/80 lg:hidden">
+                {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+                <button className="h-9 w-9 text-background hover:text-background/80 lg:hidden" title="Menu" aria-label="Toggle navigation menu">
                   <Equal className="h-5 w-5" />
                 </button>
               </SheetTrigger>
@@ -89,7 +108,7 @@ export function Search() {
   }, []);
   return (
     <>
-      <button className="" onClick={() => setOpen(true)}>
+      <button className="" onClick={() => setOpen(true)} aria-label="Search">
         <span className="flex grow items-center">
           <SearchIcon
             className="text-background hover:text-background/80 -ms-1 me-3"

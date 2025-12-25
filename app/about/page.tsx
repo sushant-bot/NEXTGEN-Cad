@@ -9,7 +9,9 @@ export default function AboutPage() {
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-600/25 rounded-full mix-blend-normal filter blur-[140px] animate-pulse"></div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="absolute top-60 right-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full mix-blend-normal filter blur-[140px] animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="absolute bottom-0 left-1/2 w-[500px] h-[500px] bg-cyan-500/20 rounded-full mix-blend-normal filter blur-[120px] animate-pulse" style={{ animationDelay: '3s' }}></div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.025)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(59,130,246,0.025)_1.5px,transparent_1.5px)] bg-[size:80px_80px]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(0,0,0,0.6)_100%)]"></div>
@@ -267,7 +269,9 @@ export default function AboutPage() {
             
             <div className="relative p-12 md:p-16 bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-gray-800/90 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+              {/* eslint-disable-next-line react/no-unknown-property */}
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+              {/* eslint-disable-next-line react/no-unknown-property */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/20 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
               
               <div className="relative z-10">

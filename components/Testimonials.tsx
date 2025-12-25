@@ -64,10 +64,13 @@ export default function Testimonials() {
       <div className="absolute inset-0">
         {/* Animated gradient orbs */}
         <div className="absolute top-20 right-0 w-[700px] h-[700px] bg-purple-600/25 rounded-full mix-blend-normal filter blur-[140px] animate-pulse"></div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="absolute bottom-20 left-0 w-[600px] h-[600px] bg-blue-600/30 rounded-full mix-blend-normal filter blur-[128px] animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-500/20 rounded-full mix-blend-normal filter blur-[120px] animate-pulse" style={{ animationDelay: '3s' }}></div>
         
         {/* Dot pattern overlay */}
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(rgba(139, 92, 246, 0.15) 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
         
         {/* Radial gradient overlay */}

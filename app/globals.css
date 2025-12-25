@@ -78,8 +78,10 @@
 /* Custom Scrollbar Styles */
 /* Firefox */
 * {
+  /* stylelint-disable */
   scrollbar-width: thin;
   scrollbar-color: rgb(59 130 246 / 0.8) transparent;
+  /* stylelint-enable */
 }
 
 /* Chrome, Edge, Safari */

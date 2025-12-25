@@ -80,8 +80,8 @@ export default function ContactPage() {
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-[650px] h-[650px] bg-cyan-600/25 rounded-full mix-blend-normal filter blur-[130px] animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-[550px] h-[550px] bg-blue-600/30 rounded-full mix-blend-normal filter blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-0 w-[450px] h-[450px] bg-purple-500/20 rounded-full mix-blend-normal filter blur-[110px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-0 right-1/4 w-[550px] h-[550px] bg-blue-600/30 rounded-full mix-blend-normal filter blur-[120px] animate-pulse [animation-delay:2s]"></div>
+        <div className="absolute top-1/2 left-0 w-[450px] h-[450px] bg-purple-500/20 rounded-full mix-blend-normal filter blur-[110px] animate-pulse [animation-delay:1s]"></div>
         <div className="absolute inset-0 opacity-20" style={{ 
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%233b82f6' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E")`,
           backgroundSize: '60px 60px'

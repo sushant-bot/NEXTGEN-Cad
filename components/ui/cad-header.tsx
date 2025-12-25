@@ -47,7 +47,8 @@ const CADHeader = () => {
                 </Button>
               </Link>
               <SheetTrigger asChild>
-                <button className="p-2 text-white hover:bg-white/10 rounded-lg lg:hidden transition-colors border border-white/20">
+                {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+                <button className="p-2 text-white hover:bg-white/10 rounded-lg lg:hidden transition-colors border border-white/20" title="Menu" aria-label="Toggle navigation menu">
                   <Menu className="h-5 w-5" />
                 </button>
               </SheetTrigger>

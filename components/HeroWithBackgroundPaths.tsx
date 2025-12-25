@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 function FloatingPaths({ position }: { position: number }) {
     const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -51,6 +53,7 @@ function FloatingPaths({ position }: { position: number }) {
 }
 
 export default function HeroWithBackgroundPaths() {
+  const router = useRouter();
   const title = "Next-Gen CAD Design Platform";
   const words = title.split(" ");
 
@@ -163,15 +166,32 @@ export default function HeroWithBackgroundPaths() {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6"
           >
-            <motion.div whileHover={buttonHoverEffect}>
-              <Button
-                size="lg"
-                className="relative group px-8 py-6 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.8)] border-0"
-              >
-                <span className="relative z-10 drop-shadow-md">Get Started Now</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-300 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300" />
-              </Button>
-            </motion.div>
+            <SignedOut>
+              <motion.div whileHover={buttonHoverEffect}>
+                <SignInButton mode="modal" forceRedirectUrl="/dashboard">
+                  <Button
+                    size="lg"
+                    className="relative group px-8 py-6 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.8)] border-0"
+                  >
+                    <span className="relative z-10 drop-shadow-md">Get Started Now</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-300 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300" />
+                  </Button>
+                </SignInButton>
+              </motion.div>
+            </SignedOut>
+            
+            <SignedIn>
+              <motion.div whileHover={buttonHoverEffect}>
+                <Button
+                  size="lg"
+                  onClick={() => router.push('/dashboard')}
+                  className="relative group px-8 py-6 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.8)] border-0"
+                >
+                  <span className="relative z-10 drop-shadow-md">Go to Dashboard</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-300 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300" />
+                </Button>
+              </motion.div>
+            </SignedIn>
 
             <motion.div whileHover={buttonHoverEffect}>
               <Button
